@@ -45,15 +45,19 @@ mod module_environ;
 mod tunables;
 mod vmoffsets;
 
+mod cache;
+
 pub mod cranelift;
 #[cfg(feature = "lightbeam")]
 pub mod lightbeam;
 
 pub use crate::address_map::{FunctionAddressMap, InstructionAddressMap, ModuleAddressMap};
+pub use crate::cache::conf as cache_conf;
 pub use crate::compilation::{
     Compilation, CompileError, Compiler, Relocation, RelocationTarget, Relocations,
 };
 pub use crate::cranelift::Cranelift;
+pub use crate::func_environ::BuiltinFunctionIndex;
 #[cfg(feature = "lightbeam")]
 pub use crate::lightbeam::Lightbeam;
 pub use crate::module::{
